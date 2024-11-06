@@ -1,5 +1,5 @@
 import { Flex, Input, UnorderedList, ListItem } from "@chakra-ui/react";
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 import { SpellResult } from "types";
 
 interface Props {
@@ -9,7 +9,9 @@ interface Props {
 
 export const SearchList = ({ data, handleSpellClick }: Props) => {
   const [searchValue, setSearchValue] = useState<string | null>(null);
-  const handleInputChange = (event) => setSearchValue(event.target.value);
+  const handleInputChange = (event: {
+    target: { value: SetStateAction<string | null> };
+  }) => setSearchValue(event.target.value);
   const filteredData = searchValue
     ? data.filter(({ name }) =>
         name
