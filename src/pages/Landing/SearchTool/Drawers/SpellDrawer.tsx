@@ -17,6 +17,7 @@ import { RefObject } from "react";
 
 interface Props {
   index: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ref: RefObject<any> | undefined;
   handleClose: () => void;
 }
@@ -103,24 +104,3 @@ export const SpellDrawer = ({ ref, index, handleClose }: Props) => {
     </Drawer>
   );
 };
-
-/**
- * 
-Level
-3rd
-Casting Time
-2 Minutes
-Range/Area
-
-20 ft (30 ft )
-Components
-V, S
-Duration
-20 Rounds
-School
-Divination
-Attack/Save
-INT Save
-Damage/Effect
-Damage (...)
- */
